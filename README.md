@@ -89,6 +89,26 @@ $ jupyter-notebook calim_analysis.ipynb
 └── results_raw.csv
 ```
 
+## Experiment: Optimizing the Regularization Parameter (λ) in arPLS
+Objective:
+Empirically validate the choice of λ=10 for baseline correction of the given time-series dataset using the arPLS algorithm.
+We compare three values of the regularization parameter (λ = 0.1, λ = 10, λ = 1000) while keeping other parameters fixed (ratio=1e-5, niter=5000).
+The goal is to identify which λ best preserves spectral features (e.g., peaks) while removing the background trend.
+
+[Show source code on notebook jupyter](optimization_arpls.ipynb)
+
+## arPLS Algorithm Overview
+The arPLS (Asymmetric Reweighted Penalized Least Squares) algorithm estimates a baseline by:
+Using a smoothness penalty controlled by λ (higher λ = smoother baseline).
+Iteratively reweighting residuals to penalize negative deviations (asymmetric correction, ideal for spectra with positive peaks).
+Stopping when the weight vector converges (ratio threshold) or after niter iterations.
+
+## Visual Inspection:
+The baseline for λ=10 is visually smooth and passes below the peak, confirming it separates the background trend from the true signal.
+Baselines for λ=0.1 and λ=1000 either absorb the peak or ignore local trends, respectively.
+
+![Comparison of arPLS baseline correction with λ=0.1, 10, 1000 on a classic trace](optimize_lambda_arpls.png)
+
 ## REFERENCES
 
 [Baek2015] Sung-June Baek, Aaron Park, Young-Jin Ahn, and Jaebum Choo. Baseline correction using asymmetri-
