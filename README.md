@@ -111,5 +111,5 @@ Baselines for λ=0.1 and λ=1000 either absorb the peak or ignore local trends, 
 
 ## REFERENCES
 
-[Baek2015] Sung-June Baek, Aaron Park, Young-Jin Ahn, and Jaebum Choo. Baseline correction using asymmetri-
-cally reweighted penalized least squares smoothing. Analyst, 140(1):250–257, 2015.
+[Baek2015] Sung-June Baek, Aaron Park, Young-Jin Ahn, and Jaebum Choo. Baseline correction using asymmetrically reweighted penalized least squares smoothing. Analyst, 140(1):250–257, 2015.
+
